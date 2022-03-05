@@ -1,4 +1,4 @@
-package uz.unzosoft.wateruz
+package uz.unzosoft.wateruz.presentation.ui.activitys
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,8 +10,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
-
     }
 }
