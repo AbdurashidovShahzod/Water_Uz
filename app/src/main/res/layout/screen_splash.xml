@@ -6,11 +6,11 @@
     tools:context=".presentation.ui.common.splash.SplashScreen">
 
     <ImageView
+        android:id="@+id/imageSplash"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_gravity="center"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher"
-        android:text="@string/hello_blank_fragment" />
+        android:src="@mipmap/ic_launcher" />
 
 </FrameLayout>

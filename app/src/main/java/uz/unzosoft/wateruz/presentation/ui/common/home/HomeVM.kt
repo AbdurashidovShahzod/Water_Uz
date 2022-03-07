@@ -1,4 +1,4 @@
-package uz.unzosoft.wateruz.presentation.ui.common.login
+package uz.unzosoft.wateruz.presentation.ui.common.home
 
 import dagger.hilt.android.lifecycle.HiltViewModel
 import uz.unzosoft.wateruz.data.local.LocalStorage
@@ -12,9 +12,8 @@ import javax.inject.Inject
  * shahzod9933@gmail.com
  */
 @HiltViewModel
-class LoginVM @Inject constructor(
-    private val cache: LocalStorage,
-    //private val loginUseCase: LoginUseCase
+class HomeVM @Inject constructor(
+
 ) : BaseVM() {
 
     init {

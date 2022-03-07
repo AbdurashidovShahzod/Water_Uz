@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import androidx.viewbinding.BuildConfig
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
+import uz.unzosoft.wateruz.data.local.LocalStorage
 
 
 /**
@@ -21,11 +22,12 @@ class App : Application() {
             Timber.plant(Timber.DebugTree())
         }
         super.onCreate()
+        LocalStorage.init(this)
         instance = this
     }
 
-    companion object{
-        lateinit var instance:App
+    companion object {
+        lateinit var instance: App
     }
 
 }
