@@ -15,7 +15,6 @@ android {
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -69,4 +68,8 @@ dependencies {
     kapt 'com.google.dagger:hilt-android-compiler:2.40.5'
     kaptTest 'com.google.dagger:hilt-android-compiler:2.40.5'
     kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.40.5'
+
+
+    // To use only without reflection variants of viewBinding
+    implementation 'com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.4.6'
 }

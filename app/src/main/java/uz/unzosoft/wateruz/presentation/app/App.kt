@@ -3,9 +3,9 @@ package uz.unzosoft.wateruz.presentation.app
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+import androidx.viewbinding.BuildConfig
+import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
-import uz.unzosoft.wateruz.BuildConfig
-import uz.unzosoft.wateruz.data.local.LocalStorage
 
 
 /**
@@ -13,6 +13,7 @@ import uz.unzosoft.wateruz.data.local.LocalStorage
  * company QQBank
  * shahzod9933@gmail.com
  */
+@HiltAndroidApp
 class App : Application() {
     override fun onCreate() {
         AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
@@ -20,7 +21,6 @@ class App : Application() {
             Timber.plant(Timber.DebugTree())
         }
         super.onCreate()
-        LocalStorage.init(this)
         instance = this
     }
 

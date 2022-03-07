@@ -1,4 +1,4 @@
-package uz.orzon.orzon_courier.base
+package uz.unzosoft.wateruz.presentation.ui.common.base
 
 import android.app.AlertDialog
 import android.content.Context
@@ -11,11 +11,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import uz.unzosoft.wateruz.presentation.ui.common.base.BaseActivity
-import uz.unzosoft.wateruz.presentation.ui.common.base.BaseVM
 
 
-abstract class BaseFragment(@LayoutRes contentLayoutId: Int) : Fragment(contentLayoutId) {
+abstract class BaseScreen(@LayoutRes contentLayoutId: Int) : Fragment(contentLayoutId) {
     abstract val viewModel: BaseVM
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
