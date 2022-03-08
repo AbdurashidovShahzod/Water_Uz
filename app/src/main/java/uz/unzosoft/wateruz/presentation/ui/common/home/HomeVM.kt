@@ -1,8 +1,7 @@
 package uz.unzosoft.wateruz.presentation.ui.common.home
 
 import dagger.hilt.android.lifecycle.HiltViewModel
-import uz.unzosoft.wateruz.data.local.LocalStorage
-import uz.unzosoft.wateruz.presentation.ui.common.base.BaseVM
+import uz.unzosoft.wateruz.presentation.ui.base.BaseVM
 import javax.inject.Inject
 
 

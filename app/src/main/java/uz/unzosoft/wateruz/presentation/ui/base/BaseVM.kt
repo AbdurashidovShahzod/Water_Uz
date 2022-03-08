@@ -1,4 +1,4 @@
-package uz.unzosoft.wateruz.presentation.ui.common.base
+package uz.unzosoft.wateruz.presentation.ui.base
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

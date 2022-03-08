@@ -9,5 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="dark_grey">#78746D</color>
     <!--    <color name="dark_grey">#F5F7F7</color>-->
+
+
+    <color name="gray_unselected_switch">#ADB8C9</color>
     <color name="main">#F5F7F7</color>
+    <color name="btn_color">#F8774A</color>
 </resources>

@@ -37,17 +37,14 @@ private val cache = Cache(App.instance.cacheDir, cacheSize)
 @InstallIn(SingletonComponent::class)
 class RetrofitModule {
 
-    @Provides
-    @Singleton
+    @[Provides Singleton]
     fun getApi(): String = BaseConfig.BASE_URL
 
-    @Provides
-    @Singleton
+    @[Provides Singleton]
     fun getLogging(): HttpLoggingInterceptor =
         HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
 
-    @Provides
-    @Singleton
+    @[Provides Singleton]
     fun okHttpClient(
         logging: HttpLoggingInterceptor,
         @ApplicationContext context: Context,
@@ -69,8 +66,7 @@ class RetrofitModule {
         }
         .build()
 
-    @Provides
-    @Singleton
+    @[Provides Singleton]
     fun getRetrofit(
         api: String,
         client: OkHttpClient

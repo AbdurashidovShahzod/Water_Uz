@@ -1,4 +1,4 @@
-package uz.unzosoft.wateruz.presentation.ui.common.base
+package uz.unzosoft.wateruz.presentation.ui.base
 
 import android.view.LayoutInflater
 import android.view.View

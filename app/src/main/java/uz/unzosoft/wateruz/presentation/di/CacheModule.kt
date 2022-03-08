@@ -14,8 +14,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object CacheModule {
 
-    @Provides
-    @Singleton
+    @[Provides Singleton]
     fun provideLocalStorage(@ApplicationContext context: Context): LocalStorage {
         return LocalStorage(context)
     }

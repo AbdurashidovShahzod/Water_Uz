@@ -1,4 +1,4 @@
-package uz.unzosoft.wateruz.presentation.ui.common.base
+package uz.unzosoft.wateruz.presentation.ui.base
 
 import android.app.AlertDialog
 import android.content.Context
@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import uz.unzosoft.wateruz.presentation.ui.extensions.transparentStatusBar
 
 
 abstract class BaseScreen(@LayoutRes contentLayoutId: Int) : Fragment(contentLayoutId) {
@@ -107,5 +108,8 @@ abstract class BaseScreen(@LayoutRes contentLayoutId: Int) : Fragment(contentLay
 //                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
 //
 //    }
+    protected fun statusBarColor(){
+        activity?.window?.transparentStatusBar()
+    }
 
 }

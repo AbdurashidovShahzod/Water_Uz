@@ -5,7 +5,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import timber.log.Timber
 import uz.unzosoft.wateruz.data.local.LocalStorage
-import uz.unzosoft.wateruz.presentation.ui.common.base.BaseVM
+import uz.unzosoft.wateruz.presentation.ui.base.BaseVM
 import uz.unzosoft.wateruz.presentation.ui.utils.vm.SingleLiveEvent
 import javax.inject.Inject
 

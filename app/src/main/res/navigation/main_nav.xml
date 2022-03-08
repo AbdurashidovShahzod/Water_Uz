@@ -18,13 +18,21 @@
         <action
             android:id="@+id/action_splashScreen_to_loginScreen"
             app:destination="@id/loginScreen"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
             app:launchSingleTop="false"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"
             app:popUpTo="@id/splashScreen"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splashScreen_to_homeScreen"
             app:destination="@id/homeScreen"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
             app:launchSingleTop="false"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"
             app:popUpTo="@id/splashScreen"
             app:popUpToInclusive="true" />
     </fragment>

@@ -1,4 +1,4 @@
-package uz.unzosoft.wateruz.presentation.ui.common.base
+package uz.unzosoft.wateruz.presentation.ui.base
 
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity

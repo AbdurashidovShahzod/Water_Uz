@@ -10,7 +10,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import uz.unzosoft.wateruz.R
 import uz.unzosoft.wateruz.databinding.ScreenSplashBinding
-import uz.unzosoft.wateruz.presentation.ui.common.base.BaseScreen
+import uz.unzosoft.wateruz.presentation.ui.base.BaseScreen
 
 
 @SuppressLint("CustomSplashScreen")
@@ -20,7 +20,7 @@ class SplashScreen : BaseScreen(R.layout.screen_splash) {
     private val binding by viewBinding(ScreenSplashBinding::bind)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        statusBarColorDark()
+        statusBarColor()
         viewModel.apply {
             homeScreenLiveData.observe(viewLifecycleOwner, homeScreenObserver)
             loginScreenLiveData.observe(viewLifecycleOwner, loginScreenObserver)
