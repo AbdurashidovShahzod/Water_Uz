@@ -16,10 +16,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
+        <!--        android:layoutAnimation="@anim/layout_anim"-->
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_16dp"
@@ -27,21 +27,21 @@
             android:fontFamily="@font/poppins_bold"
             android:text="Water uz"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_30sp"
+            android:textSize="@dimen/text_25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvTitleMudofa"
+            android:id="@+id/appName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_8dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Mudofaa vazirligi"
+            android:text="Water uz"
             android:textColor="@color/black"
             android:textSize="@dimen/text_24sp"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintStart_toStartOf="@+id/name"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <ImageView
             android:id="@+id/imgNotification"
@@ -59,20 +59,22 @@
             android:id="@+id/search"
             android:layout_width="0dp"
             android:layout_height="@dimen/size_50dp"
-            android:layout_marginTop="@dimen/size_18dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/shape_home_search"
             android:drawableEnd="@drawable/ic_search"
             android:ems="10"
-            android:hint="Search"
             android:fontFamily="@font/poppins_light"
+            android:hint="Search"
             android:inputType="textPersonName"
+            android:layoutAnimation="@anim/layout_anim_main"
             android:padding="@dimen/size_10dp"
             android:paddingStart="@dimen/size_16dp"
             android:textColor="@color/dark_grey"
             android:textColorHint="@color/dark_grey"
             app:layout_constraintEnd_toEndOf="@+id/imgNotification"
-            app:layout_constraintStart_toStartOf="@+id/tvTitleMudofa"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitleMudofa" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/appName"
+            app:layout_constraintTop_toBottomOf="@+id/appName" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -85,7 +87,7 @@
         android:layout_marginStart="@dimen/size_16dp"
         android:layout_marginTop="@dimen/size_16dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Recent"
+        android:text="Map"
         android:textColor="@android:color/background_dark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
@@ -97,6 +99,7 @@
         android:layout_marginEnd="@dimen/size_16dp"
         android:fontFamily="@font/poppins_bold"
         android:text="See All"
+        android:visibility="invisible"
         android:textColor="@android:color/background_dark"
         android:textSize="@dimen/text_12sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvRecent"
