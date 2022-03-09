@@ -35,6 +35,7 @@
                     android:id="@+id/line1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layoutAnimation="@anim/layout_anim"
                     android:gravity="center"
                     android:orientation="vertical"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -45,6 +46,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/size_150dp"
+                        android:layoutAnimation="@anim/layout_anim"
                         android:layout_marginTop="@dimen/size_24dp"
                         android:src="@drawable/logo" />
 
@@ -54,8 +56,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
                         android:layout_marginTop="32dp"
+                        android:layoutAnimation="@anim/layout_anim"
                         android:fontFamily="@font/poppins_bold"
-                        android:text="Login"
+                        android:text="Login\nWater uz"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_30sp"
                         android:textStyle="bold" />
@@ -73,6 +76,7 @@
                     android:inputType="textEmailAddress"
                     android:outlineAmbientShadowColor="@null"
                     android:textColor="@color/black"
+                    android:layoutAnimation="@anim/layout_anim"
                     android:textColorHint="@color/dark_grey"
                     app:boxStrokeColor="@color/btn_color"
                     app:helperTextTextColor="#A178746D"
@@ -90,6 +94,7 @@
                         android:id="@+id/editEmail"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layoutAnimation="@anim/layout_anim"
                         android:fontFamily="@font/poppins_medium" />
 
 
@@ -108,6 +113,7 @@
                     app:boxStrokeColor="@color/btn_color"
                     app:counterEnabled="true"
                     app:counterMaxLength="8"
+                    android:layoutAnimation="@anim/layout_anim"
                     app:endIconMode="password_toggle"
                     app:endIconTint="@color/btn_color"
                     app:errorTextColor="#E91E63"
@@ -125,6 +131,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:fontFamily="@font/poppins_medium"
+                        android:layoutAnimation="@anim/layout_anim"
                         android:maxLength="13" />
 
 
@@ -139,6 +146,7 @@
                     android:fontFamily="@font/poppins"
                     android:text="Forget password?"
                     android:textColor="@color/dark_grey"
+                    android:layoutAnimation="@anim/layout_anim"
                     android:visibility="invisible"
                     app:layout_constraintLeft_toLeftOf="@id/passwordInput"
                     app:layout_constraintRight_toRightOf="@id/passwordInput"
@@ -149,6 +157,7 @@
                     style="@style/NextButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_56dp"
+                    android:layoutAnimation="@anim/layout_anim"
                     android:fontFamily="@font/poppins_medium"
                     android:text="Sign in"
                     app:layout_constraintLeft_toLeftOf="@id/passwordInput"
@@ -163,6 +172,7 @@
                     android:background="#00000000"
                     android:fontFamily="@font/poppins"
                     android:text="Log in"
+                    android:layoutAnimation="@anim/layout_anim"
                     android:textColor="@color/dark_grey"
                     app:layout_constraintLeft_toLeftOf="@id/passwordInput"
                     app:layout_constraintRight_toRightOf="@id/passwordInput"

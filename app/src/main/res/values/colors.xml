@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#E3562A</color>
-    <color name="purple_700">#65AAEA</color>
+    <color name="purple_200">#FFD64D</color>
+    <color name="purple_500">#FFD64D</color>
+    <color name="purple_700">#FFCF0F</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
@@ -13,5 +13,5 @@
 
     <color name="gray_unselected_switch">#ADB8C9</color>
     <color name="main">#F5F7F7</color>
-    <color name="btn_color">#F8774A</color>
+    <color name="btn_color">#111111</color>
 </resources>
