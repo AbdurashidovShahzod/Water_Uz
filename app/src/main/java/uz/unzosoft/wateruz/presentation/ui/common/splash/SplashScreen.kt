@@ -37,7 +37,6 @@ class SplashScreen : BaseScreen(R.layout.screen_splash) {
     }
 
     private val loginScreenObserver = Observer<Unit> {
-        //findNavController().navigate(R.id.action_splashScreen_to_loginScreen)
-        findNavController().navigate(R.id.action_splashScreen_to_homeScreen)
+        findNavController().navigate(R.id.action_splashScreen_to_loginScreen)
     }
 }

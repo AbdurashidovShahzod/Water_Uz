@@ -25,9 +25,10 @@ class LocalStorage(context: Context) {
 
     var logged: Boolean by BooleanPreference(pref, false)
     var completeIntro: Boolean by BooleanPreference(pref, false)
-    var token: String by StringPreference(pref,"")
+    var token: String by StringPreference(pref, "")
     var refreshToken: String by StringPreference(pref)
     var id: String by StringPreference(pref)
+    var userName: String by StringPreference(pref, "")
     var lan: String by StringPreference(pref)
     var markedLanguage: String by StringPreference(pref)
     var isOnBoarding: Boolean by BooleanPreference(pref, false)

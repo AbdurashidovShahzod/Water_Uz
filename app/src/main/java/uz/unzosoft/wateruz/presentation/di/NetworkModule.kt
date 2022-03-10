@@ -67,6 +67,7 @@ class RetrofitModule {
         .build()
 
     @[Provides Singleton]
+    @WaterServiceQualifier
     fun getRetrofit(
         api: String,
         client: OkHttpClient

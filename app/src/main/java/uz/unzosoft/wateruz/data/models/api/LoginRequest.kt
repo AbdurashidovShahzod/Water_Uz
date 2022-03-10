@@ -1,6 +1,7 @@
 package uz.unzosoft.wateruz.data.models.api
 
 import com.google.gson.annotations.SerializedName
+import retrofit2.http.Field
 
 
 /**
@@ -10,8 +11,6 @@ import com.google.gson.annotations.SerializedName
  */
 
 data class LoginRequest(
-    @SerializedName("login") var login: Int? = null,
-    @SerializedName("password") var password: String? = null,
-    @SerializedName("token") var token: String? = null,
-    @SerializedName("expires_at") var expiresAt: String? = null
+    @SerializedName("email") var email: String? = null,
+    @SerializedName("password") var password: String? = null
 )

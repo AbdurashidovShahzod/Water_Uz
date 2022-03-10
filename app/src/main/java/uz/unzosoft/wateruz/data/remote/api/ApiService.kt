@@ -1,6 +1,8 @@
 package uz.unzosoft.wateruz.data.remote.api
 
 import retrofit2.Response
+import retrofit2.http.Body
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 import uz.unzosoft.wateruz.data.models.api.LoginRequest
 import uz.unzosoft.wateruz.data.models.api.LoginResponse
@@ -13,5 +15,5 @@ import uz.unzosoft.wateruz.data.models.api.LoginResponse
  */
 interface ApiService {
     @POST("auth/login")
-    suspend fun login(loginRequest: LoginRequest): Response<LoginResponse>
+    suspend fun login(@Body loginRequest: LoginRequest): Response<LoginResponse>
 }

@@ -111,6 +111,7 @@ dependencies {
     debugImplementation 'com.readystatesoftware.chuck:library:1.1.0'
     releaseImplementation 'com.readystatesoftware.chuck:library-no-op:1.1.0'
 
+    implementation 'androidx.work:work-runtime-ktx:2.7.0'
 //
 //    /**
 //     *   Chuck

@@ -23,6 +23,7 @@
             android:layout_marginHorizontal="@dimen/size_16dp"
             android:layout_marginVertical="@dimen/size_16dp"
             android:orientation="vertical"
+            android:layoutAnimation="@anim/layout_anim"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constPassToProfile">

@@ -16,7 +16,7 @@ import javax.inject.Singleton
  */
 @Module
 @InstallIn(SingletonComponent::class)
-class ApiModule {
-    @[Provides Singleton]
-    fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
+object ApiModule {
+    @[Provides]
+    fun provideApiService(@WaterServiceQualifier retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 }

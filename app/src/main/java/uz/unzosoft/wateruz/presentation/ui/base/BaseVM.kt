@@ -37,7 +37,7 @@ abstract class BaseVM : ViewModel() {
         block: suspend CoroutineScope.() -> Unit
     ): Job = viewModelScope.launch(context, start, block)
 
-    protected fun globalError(error: Throwable) {
-        _globalErrorLiveData.value = error.message
+    protected fun globalError(error: String) {
+        _globalErrorLiveData.value = error
     }
 }
