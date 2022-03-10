@@ -1,6 +1,7 @@
 package uz.unzosoft.wateruz.presentation.ui.common.home
 
 import dagger.hilt.android.lifecycle.HiltViewModel
+import uz.unzosoft.wateruz.data.local.LocalStorage
 import uz.unzosoft.wateruz.presentation.ui.base.BaseVM
 import javax.inject.Inject
 
@@ -12,13 +13,7 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class HomeVM @Inject constructor(
-
+    private val cache: LocalStorage
 ) : BaseVM() {
-
-    init {
-        launchVM {
-
-        }
-    }
 
 }
