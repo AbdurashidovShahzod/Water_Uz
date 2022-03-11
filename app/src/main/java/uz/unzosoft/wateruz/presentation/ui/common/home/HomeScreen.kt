@@ -8,14 +8,17 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import uz.unzosoft.wateruz.R
 import uz.unzosoft.wateruz.data.local.LocalStorage
+import uz.unzosoft.wateruz.data.models.api.OrdersItem
 import uz.unzosoft.wateruz.data.models.api.OrdersResponse
 import uz.unzosoft.wateruz.databinding.ScreenHomeBinding
+import uz.unzosoft.wateruz.presentation.ui.adapters.OrdersAdapters
 import uz.unzosoft.wateruz.presentation.ui.base.BaseScreen
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeScreen : BaseScreen(R.layout.screen_home) {
     override val viewModel: HomeVM by viewModels()
+    private val adapter by lazy { OrdersAdapters() }
     private val binding by viewBinding(ScreenHomeBinding::bind)
 
     @Inject
@@ -26,7 +29,7 @@ class HomeScreen : BaseScreen(R.layout.screen_home) {
         setupUi()
         viewModel.apply {
             ordersLiveData.observe(viewLifecycleOwner, ordersObserver)
-            loadingLiveData.observe(viewLifecycleOwner,loadingObserver)
+            loadingLiveData.observe(viewLifecycleOwner, loadingObserver)
         }
     }
 
@@ -34,10 +37,11 @@ class HomeScreen : BaseScreen(R.layout.screen_home) {
         binding.apply {
             appName.text = cache.userName
         }
+        binding.ordersRv.adapter = adapter
     }
 
     private val ordersObserver = Observer<OrdersResponse> {
-
+        adapter.submitList(it.ordersList)
     }
     private val loadingObserver = Observer<Unit> {
 

@@ -6,10 +6,10 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import timber.log.Timber
 import uz.unzosoft.wateruz.data.local.LocalStorage
+import uz.unzosoft.wateruz.data.models.api.OrdersItem
 import uz.unzosoft.wateruz.data.models.api.OrdersResponse
 import uz.unzosoft.wateruz.domain.usecase.OrdersUseCase
 import uz.unzosoft.wateruz.presentation.ui.base.BaseVM
-import uz.unzosoft.wateruz.presentation.ui.state.Resource
 import uz.unzosoft.wateruz.presentation.ui.utils.ResourceUI
 import javax.inject.Inject
 

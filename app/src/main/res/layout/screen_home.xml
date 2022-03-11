@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main"
+    android:paddingTop="@dimen/size_10dp"
     tools:context=".presentation.ui.common.home.HomeScreen">
 
 
@@ -15,6 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        android:layoutAnimation="@anim/layout_anim"
         app:layout_constraintTop_toTopOf="parent">
         <!--        android:layoutAnimation="@anim/layout_anim"-->
 
@@ -137,21 +139,14 @@
         app:layout_constraintTop_toBottomOf="@id/rvCategory">
 
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:elevation="0dp">
-
-
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvNews"
+                android:id="@+id/ordersRv"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
                 tools:listitem="@layout/item_order"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-        </androidx.core.widget.NestedScrollView>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
