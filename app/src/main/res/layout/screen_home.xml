@@ -50,7 +50,7 @@
             android:layout_marginEnd="@dimen/size_16dp"
             android:background="@drawable/shape_home_notification"
             android:padding="@dimen/size_10dp"
-            android:src="@drawable/ic_notification"
+            android:src="@drawable/ic_profile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -119,10 +119,11 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvSeeAll"
         >
+
         <ImageView
             android:layout_width="match_parent"
-            android:src="@drawable/logo"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:src="@drawable/logo" />
     </LinearLayout>
 
 
@@ -146,8 +147,8 @@
                 android:id="@+id/rvNews"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layoutAnimation="@anim/layout_anim_main"
-                android:orientation="vertical"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_order"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         </androidx.core.widget.NestedScrollView>

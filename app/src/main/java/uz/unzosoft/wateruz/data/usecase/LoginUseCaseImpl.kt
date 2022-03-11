@@ -1,7 +1,9 @@
 package uz.unzosoft.wateruz.data.usecase
 
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import okhttp3.ResponseBody
 import org.json.JSONException
 import org.json.JSONObject
@@ -24,9 +26,9 @@ class LoginUseCaseImpl @Inject constructor(
     private val repository: LoginRepository
 ) : LoginUseCase {
     override suspend fun invoke(loginRequest: LoginRequest): Flow<Resource<LoginResponse>> {
-        val data = repository.login(loginRequest)
         return flow {
             try {
+                val data = repository.login(loginRequest)
                 emit(Resource.Loading<LoginResponse>())
                 if (data.code() == 200) data.body().let {
                     emit(Resource.Success<LoginResponse>(it!!))
@@ -34,11 +36,11 @@ class LoginUseCaseImpl @Inject constructor(
                     emit(Resource.Error(data.message()))
                 }
             } catch (e: HttpException) {
-                emit(Resource.Error(handleError(data.errorBody())))
+                emit(Resource.Error(e.localizedMessage))
             } catch (e: IOException) {
-                emit(Resource.Error(handleError(data.errorBody())))
+                emit(Resource.Error(e.message!!))
             }
-        }
+        }.flowOn(Dispatchers.IO)
     }
 
     private fun handleError(body: ResponseBody?): String {

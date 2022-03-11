@@ -5,7 +5,9 @@ import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import uz.unzosoft.wateruz.data.repository.LoginRepositoryImpl
+import uz.unzosoft.wateruz.data.repository.OrdersRepositoryImpl
 import uz.unzosoft.wateruz.domain.repository.LoginRepository
+import uz.unzosoft.wateruz.domain.repository.OrdersRepository
 
 
 /**
@@ -18,4 +20,7 @@ import uz.unzosoft.wateruz.domain.repository.LoginRepository
 interface RepositoryModule {
     @Binds
     fun bindsLoginRepository(loginRepositoryImpl: LoginRepositoryImpl):LoginRepository
+
+    @Binds
+    fun bindsOrdersRepository(ordersRepositoryImpl:OrdersRepositoryImpl):OrdersRepository
 }
