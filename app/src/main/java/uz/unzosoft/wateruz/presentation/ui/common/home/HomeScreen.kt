@@ -21,6 +21,7 @@ import uz.unzosoft.wateruz.data.models.api.OrdersResponse
 import uz.unzosoft.wateruz.databinding.ScreenHomeBinding
 import uz.unzosoft.wateruz.presentation.ui.adapters.OrdersAdapters
 import uz.unzosoft.wateruz.presentation.ui.base.BaseScreen
+import uz.unzosoft.wateruz.presentation.ui.utils.context.getBitmapDescriptor
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -69,7 +70,10 @@ class HomeScreen : BaseScreen(R.layout.screen_home), OnMapReadyCallback {
         val lat = latLng?.get(0)?.toDouble()
         val lng = latLng?.get(1)?.toDouble()
         val samarkand = LatLng(lat!!, lng!!)
-        map.addMarker(MarkerOptions().position(samarkand).title("Samarqand"))
+        map.addMarker(
+            MarkerOptions().position(samarkand).title("Samarqand")
+                .icon(activity?.getBitmapDescriptor(R.drawable.ic_car))
+        )
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(samarkand, 13f))
         googleMap.uiSettings.isCompassEnabled = true
         googleMap.uiSettings.isMapToolbarEnabled = true

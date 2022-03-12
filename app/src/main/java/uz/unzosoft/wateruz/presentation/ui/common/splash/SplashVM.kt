@@ -5,6 +5,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import timber.log.Timber
 import uz.unzosoft.wateruz.data.local.LocalStorage
+import uz.unzosoft.wateruz.domain.usecase.LoginUseCase
 import uz.unzosoft.wateruz.presentation.ui.base.BaseVM
 import uz.unzosoft.wateruz.presentation.ui.utils.vm.SingleLiveEvent
 import javax.inject.Inject
@@ -17,7 +18,8 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class SplashVM @Inject constructor(
-    private val appCache: LocalStorage
+    private val appCache: LocalStorage,
+    private val loginUseCase: LoginUseCase
 ) : BaseVM() {
 
     private val _homeScreenLiveData = SingleLiveEvent<Unit>()
