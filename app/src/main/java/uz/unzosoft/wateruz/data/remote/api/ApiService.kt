@@ -8,6 +8,7 @@ import uz.unzosoft.wateruz.data.models.api.LoginRequest
 import uz.unzosoft.wateruz.data.models.api.LoginResponse
 import uz.unzosoft.wateruz.data.models.api.OrdersItem
 import uz.unzosoft.wateruz.data.models.api.OrdersResponse
+import uz.unzosoft.wateruz.data.utils.BaseResponse
 
 
 /**
@@ -20,5 +21,8 @@ interface ApiService {
     suspend fun login(@Body loginRequest: LoginRequest): Response<LoginResponse>
 
     @GET("orders")
-    suspend fun orders():Response<OrdersResponse>
+    suspend fun orders(): Response<BaseResponse<OrdersResponse>>
+
+    @GET("orders")
+    suspend fun home(): Response<List<OrdersItem>>
 }

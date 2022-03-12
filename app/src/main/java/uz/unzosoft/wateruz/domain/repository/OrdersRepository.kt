@@ -1,7 +1,9 @@
 package uz.unzosoft.wateruz.domain.repository
 
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 import uz.unzosoft.wateruz.data.models.api.OrdersResponse
+import uz.unzosoft.wateruz.domain.utils.ResourceUI
 
 
 /**
@@ -10,5 +12,5 @@ import uz.unzosoft.wateruz.data.models.api.OrdersResponse
  * shahzod9933@gmail.com
  */
 interface OrdersRepository {
-    suspend fun orders():Response<OrdersResponse>
+    suspend fun orders():Flow<ResourceUI<OrdersResponse>>
 }

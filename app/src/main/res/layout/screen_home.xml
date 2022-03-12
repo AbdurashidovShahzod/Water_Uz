@@ -13,10 +13,10 @@
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layoutAnimation="@anim/layout_anim"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        android:layoutAnimation="@anim/layout_anim"
         app:layout_constraintTop_toTopOf="parent">
         <!--        android:layoutAnimation="@anim/layout_anim"-->
 
@@ -100,9 +100,9 @@
         android:layout_marginEnd="@dimen/size_16dp"
         android:fontFamily="@font/poppins_bold"
         android:text="See All"
-        android:visibility="invisible"
         android:textColor="@android:color/background_dark"
         android:textSize="@dimen/text_12sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/tvRecent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvRecent" />
@@ -113,19 +113,21 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="16dp"
+        android:padding="@dimen/size_5dp"
         android:layoutAnimation="@anim/layout_anim_main"
+        android:background="@drawable/shape_home_search"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@id/swipeRefreshLayout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSeeAll"
-        >
+        app:layout_constraintTop_toBottomOf="@id/tvSeeAll">
 
-        <ImageView
+        <fragment
+            android:id="@+id/mapView"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/logo" />
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 
@@ -139,13 +141,13 @@
         app:layout_constraintTop_toBottomOf="@id/rvCategory">
 
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/ordersRv"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:orientation="horizontal"
-                tools:listitem="@layout/item_order"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ordersRv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_order" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

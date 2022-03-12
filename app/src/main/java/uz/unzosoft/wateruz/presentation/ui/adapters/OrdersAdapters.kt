@@ -1,5 +1,6 @@
 package uz.unzosoft.wateruz.presentation.ui.adapters
 
+import android.annotation.SuppressLint
 import android.view.View
 import uz.unzosoft.wateruz.R
 import uz.unzosoft.wateruz.data.models.api.OrdersItem
@@ -17,6 +18,7 @@ class OrdersAdapters : SuperListAdapter<OrdersItem>(
     { oldItem, newItem -> oldItem == newItem },
     { oldItem, newItem -> oldItem == newItem },
 ) {
+    @SuppressLint("SetTextI18n")
     override fun bind(t: OrdersItem, view: View, adapterPosition: Int) {
         val binding = ItemOrderBinding.bind(view)
         binding.apply {

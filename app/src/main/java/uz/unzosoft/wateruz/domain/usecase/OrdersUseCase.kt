@@ -1,9 +1,8 @@
 package uz.unzosoft.wateruz.domain.usecase
 
 import kotlinx.coroutines.flow.Flow
-import uz.unzosoft.wateruz.data.models.api.OrdersItem
 import uz.unzosoft.wateruz.data.models.api.OrdersResponse
-import uz.unzosoft.wateruz.presentation.ui.utils.ResourceUI
+import uz.unzosoft.wateruz.domain.utils.ResourceUI
 
 
 /**

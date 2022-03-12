@@ -4,11 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/shape_btn_rounded.xml" value="0.121" />
+        <entry key="app/src/main/res/drawable/shape_home_search.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/item_category_rv.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/item_order.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/screen_home.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/screen_home.xml" value="0.125" />
         <entry key="app/src/main/res/layout/screen_login.xml" value="0.17864583333333334" />
+        <entry key="app/src/main/res/layout/screen_maps.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/screen_splash.xml" value="0.1685185185185185" />
       </map>
     </option>

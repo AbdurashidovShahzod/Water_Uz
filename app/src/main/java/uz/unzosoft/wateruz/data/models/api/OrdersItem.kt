@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName
  * company QQBank
  * shahzod9933@gmail.com
  */
-class OrdersResponse(var ordersList: List<OrdersItem>)
+class OrdersResponse(var ordersList: List<OrdersItem> = arrayListOf())
 
 
 data class OrdersItem(

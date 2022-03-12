@@ -2,17 +2,20 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
+    android:layout_marginStart="@dimen/size_10dp"
+    android:layout_marginEnd="@dimen/size_8dp"
     android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardItemUse"
         android:layout_width="@dimen/size_180dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
         android:layout_marginTop="8dp"
+        app:rippleColor="@color/purple_500"
+        app:strokeColor="@color/purple_500"
         android:layout_marginBottom="@dimen/size_8dp"
         app:cardBackgroundColor="@color/main"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="4dp"
         app:contentPaddingTop="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,8 +25,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/shape_home_search">
+            android:background="@drawable/shape_home_search"
+            android:layout_height="match_parent">
+<!--            android:background="@drawable/shape_home_search"-->
 
             <ImageView
                 android:id="@+id/imgCar"
@@ -43,7 +47,7 @@
                 android:maxLines="2"
                 android:text="@string/app_name"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_22sp"
+                android:textSize="@dimen/text_18sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imgCar" />
@@ -55,7 +59,7 @@
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/app_name"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_16sp"
+                android:textSize="@dimen/text_14sp"
                 app:layout_constraintLeft_toLeftOf="@id/tvName"
                 app:layout_constraintRight_toRightOf="@id/tvName"
                 app:layout_constraintTop_toBottomOf="@id/tvName" />
@@ -81,6 +85,7 @@
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center"
                     android:text="10"
+                    android:textSize="@dimen/text_13sp"
                     android:textColor="@color/white" />
             </androidx.cardview.widget.CardView>
 

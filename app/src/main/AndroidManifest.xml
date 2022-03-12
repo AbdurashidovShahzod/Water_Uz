@@ -4,6 +4,7 @@
     package="uz.unzosoft.wateruz">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,9 +15,31 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.WaterUz"
+        android:usesCleartextTraffic="true"
         tools:ignore="UnusedAttribute">
+
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDv88TDrKKN6TG6yN3Na6Bqn6_uSDhIPp8" />
+
+        <activity
+            android:name=".presentation.ui.activitys.MapsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps" >
+
+        </activity>
         <activity
             android:name=".presentation.ui.activitys.MainActivity"
             android:exported="true">
@@ -26,6 +49,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

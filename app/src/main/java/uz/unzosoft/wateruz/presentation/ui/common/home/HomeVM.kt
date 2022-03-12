@@ -8,9 +8,11 @@ import timber.log.Timber
 import uz.unzosoft.wateruz.data.local.LocalStorage
 import uz.unzosoft.wateruz.data.models.api.OrdersItem
 import uz.unzosoft.wateruz.data.models.api.OrdersResponse
+import uz.unzosoft.wateruz.domain.usecase.HomeUseCase
 import uz.unzosoft.wateruz.domain.usecase.OrdersUseCase
+import uz.unzosoft.wateruz.domain.utils.ResourceUI
 import uz.unzosoft.wateruz.presentation.ui.base.BaseVM
-import uz.unzosoft.wateruz.presentation.ui.utils.ResourceUI
+import uz.unzosoft.wateruz.presentation.ui.state.Resource
 import javax.inject.Inject
 
 
@@ -22,30 +24,48 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeVM @Inject constructor(
     private val cache: LocalStorage,
-    private val ordersUseCase: OrdersUseCase
+    private val ordersUseCase: OrdersUseCase,
+    private val homeUseCase: HomeUseCase
 ) : BaseVM() {
-    private val _ordersLiveData = MutableLiveData<OrdersResponse>()
-    val ordersLiveData: LiveData<OrdersResponse> = _ordersLiveData
+    private val _ordersLiveData = MutableLiveData<List<OrdersItem>>()
+    val ordersLiveData: LiveData<List<OrdersItem>> = _ordersLiveData
 
     init {
-        orders()
+        home()
     }
 
-    private fun orders() {
+//    fun orders() {
+//        launchVM {
+//            ordersUseCase.invoke().collect {
+//                when (it) {
+//                    is ResourceUI.Loading -> {
+//                        _loadingLiveData.value = Unit
+//                    }
+//                    is ResourceUI.Error -> {
+//                        globalError(it.error.toString())
+//                    }
+//                    is ResourceUI.Resource -> {
+//                        val data = it.data
+//                        Timber.d("zannigor", data.toString())
+//                        _ordersLiveData.value = data
+//                    }
+//                }
+//            }
+//        }
+//    }
+
+    fun home() {
         launchVM {
-            ordersUseCase.invoke().collect {
+            homeUseCase.invoke().collect {
                 when (it) {
-                    is ResourceUI.Loading -> {
-                        _loadingLiveData.value = Unit
+                    is Resource.Error -> {
+                        globalError(it.message.toString())
                     }
-                    is ResourceUI.Error -> {
-                        globalError(it.error.toString())
-                    }
-                    is ResourceUI.Resource -> {
+                    is Resource.Success -> {
                         val data = it.data
-                        Timber.d("zannigor", data.toString())
-                        _ordersLiveData.value = data
+                        _ordersLiveData.value = data!!
                     }
+                    else -> {}
                 }
             }
         }
