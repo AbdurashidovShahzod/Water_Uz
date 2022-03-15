@@ -6,10 +6,12 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import uz.unzosoft.wateruz.data.repository.LoginRepositoryImpl
 import uz.unzosoft.wateruz.data.usecase.HomeUseCaseImpl
+import uz.unzosoft.wateruz.data.usecase.LoginStateUseCaseImpl
 import uz.unzosoft.wateruz.data.usecase.LoginUseCaseImpl
 import uz.unzosoft.wateruz.data.usecase.OrdersUseCaseImpl
 import uz.unzosoft.wateruz.domain.repository.LoginRepository
 import uz.unzosoft.wateruz.domain.usecase.HomeUseCase
+import uz.unzosoft.wateruz.domain.usecase.LoginStateUseCase
 import uz.unzosoft.wateruz.domain.usecase.LoginUseCase
 import uz.unzosoft.wateruz.domain.usecase.OrdersUseCase
 
@@ -24,6 +26,9 @@ import uz.unzosoft.wateruz.domain.usecase.OrdersUseCase
 interface UseCaseModule {
     @Binds
     fun bindsLoginUseCase(loginUseCaseImpl: LoginUseCaseImpl): LoginUseCase
+
+    @Binds
+    fun bindsLoginStateUseCase(loginStateUseCaseImpl: LoginStateUseCaseImpl): LoginStateUseCase
 
     @Binds
     fun bindsOrdersUseCase(ordersUseCaseImpl: OrdersUseCaseImpl): OrdersUseCase

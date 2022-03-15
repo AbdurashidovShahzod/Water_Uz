@@ -1,11 +1,13 @@
 package uz.unzosoft.wateruz.presentation.ui.common.home
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -13,7 +15,11 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.hitomi.cmlibrary.OnMenuStatusChangeListener
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 import uz.unzosoft.wateruz.R
 import uz.unzosoft.wateruz.data.local.LocalStorage
 import uz.unzosoft.wateruz.data.models.api.OrdersItem
@@ -22,6 +28,8 @@ import uz.unzosoft.wateruz.databinding.ScreenHomeBinding
 import uz.unzosoft.wateruz.presentation.ui.adapters.OrdersAdapters
 import uz.unzosoft.wateruz.presentation.ui.base.BaseScreen
 import uz.unzosoft.wateruz.presentation.ui.utils.context.getBitmapDescriptor
+import uz.unzosoft.wateruz.presentation.ui.utils.context.showSnackBar
+import uz.unzosoft.wateruz.presentation.ui.utils.context.showToast
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -44,12 +52,41 @@ class HomeScreen : BaseScreen(R.layout.screen_home), OnMapReadyCallback {
         viewModel.apply {
             ordersLiveData.observe(viewLifecycleOwner, ordersObserver)
             loadingLiveData.observe(viewLifecycleOwner, loadingObserver)
+            ordersState.map {ordersObserver}.launchIn(viewLifecycleOwner.lifecycleScope)
         }
     }
 
     private fun setupUi() {
         binding.apply {
-            appName.text = cache.userName
+            circleMenu.setMainMenu(
+                Color.parseColor("#D81B60"),
+                R.drawable.ic_add_circle,
+                R.drawable.ic_minus_cirlce
+            )
+                .addSubMenu(requireActivity().getColor(R.color.purple_700), R.drawable.ic_call)
+                .addSubMenu(requireActivity().getColor(R.color.holo_purple), R.drawable.ic_location_cross)
+                .addSubMenu(requireActivity().getColor(R.color.holo_blue_bright), R.drawable.ic_profile)
+                .setOnMenuSelectedListener {
+                    when (it) {
+                        0 -> {
+                            showSnackBar("Call")
+                        }
+                        1 -> {
+                            showSnackBar("Location")
+                        }
+                        2 -> {
+                            showSnackBar("Profile")
+                        }
+                    }
+                }.setOnMenuStatusChangeListener(object : OnMenuStatusChangeListener {
+                    override fun onMenuOpened() {
+
+                    }
+
+                    override fun onMenuClosed() {
+
+                    }
+                })
         }
     }
 
@@ -79,4 +116,5 @@ class HomeScreen : BaseScreen(R.layout.screen_home), OnMapReadyCallback {
         googleMap.uiSettings.isMapToolbarEnabled = true
         googleMap.uiSettings.isZoomControlsEnabled = true
     }
+
 }

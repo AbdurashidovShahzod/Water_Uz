@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_add_circle.xml" value="0.236" />
         <entry key="app/src/main/res/drawable/ic_car.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_minus_cirlce.xml" value="0.236" />
         <entry key="app/src/main/res/drawable/ic_van_car.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/shape_btn_rounded.xml" value="0.121" />
         <entry key="app/src/main/res/drawable/shape_home_search.xml" value="0.1" />

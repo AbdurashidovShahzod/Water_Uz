@@ -37,12 +37,13 @@
         <activity
             android:name=".presentation.ui.activitys.MapsActivity"
             android:exported="true"
-            android:label="@string/title_activity_maps" >
+            android:label="@string/title_activity_maps">
 
         </activity>
         <activity
             android:name=".presentation.ui.activitys.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

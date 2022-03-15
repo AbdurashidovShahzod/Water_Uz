@@ -29,4 +29,17 @@
         <item name="cornerSize">@dimen/size_10dp</item>
         <item name="android:textColor">@color/btn_color</item>
     </style>
+
+    <array name="icons">
+        <item>@drawable/ic_car</item>
+        <item>@drawable/ic_profile</item>
+        <item>@drawable/ic_notification</item>
+    </array>
+    <array name="colors">
+        <item>@android:color/holo_red_light</item>
+        <item>@android:color/holo_purple</item>
+        <item>@android:color/holo_orange_light</item>
+    </array>
+
+
 </resources>

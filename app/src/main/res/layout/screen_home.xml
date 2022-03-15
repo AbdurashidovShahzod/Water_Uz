@@ -13,69 +13,68 @@
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layoutAnimation="@anim/layout_anim"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <!--        android:layoutAnimation="@anim/layout_anim"-->
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/size_16dp"
-            android:layout_marginTop="@dimen/size_24dp"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Water uz"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_26sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <!--        <TextView-->
+        <!--            android:id="@+id/name"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="@dimen/size_16dp"-->
+        <!--            android:layout_marginTop="@dimen/size_24dp"-->
+        <!--            android:fontFamily="@font/poppins_bold"-->
+        <!--            android:text="Water uz"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            android:textSize="@dimen/text_26sp"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
-        <TextView
-            android:id="@+id/appName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_medium"
-            android:text="Water uz"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_22sp"
-            app:layout_constraintStart_toStartOf="@+id/name"
-            app:layout_constraintTop_toBottomOf="@+id/name" />
+        <!--        <TextView-->
+        <!--            android:id="@+id/appName"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:fontFamily="@font/poppins_medium"-->
+        <!--            android:text="Water uz"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            android:textSize="@dimen/text_22sp"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/name"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/name" />-->
 
-        <ImageView
-            android:id="@+id/imgNotification"
-            android:layout_width="@dimen/size_45dp"
-            android:layout_height="@dimen/size_45dp"
-            android:layout_marginTop="@dimen/size_24dp"
-            android:layout_marginEnd="@dimen/size_16dp"
-            android:background="@drawable/shape_home_notification"
-            android:padding="@dimen/size_10dp"
-            android:src="@drawable/ic_profile"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imgNotification"-->
+        <!--            android:layout_width="@dimen/size_45dp"-->
+        <!--            android:layout_height="@dimen/size_45dp"-->
+        <!--            android:layout_marginTop="@dimen/size_24dp"-->
+        <!--            android:layout_marginEnd="@dimen/size_16dp"-->
+        <!--            android:background="@drawable/shape_home_notification"-->
+        <!--            android:padding="@dimen/size_10dp"-->
+        <!--            android:src="@drawable/ic_profile"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
-        <EditText
-            android:id="@+id/search"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/size_50dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/shape_home_search"
-            android:drawableEnd="@drawable/ic_search"
-            android:ems="10"
-            android:fontFamily="@font/poppins_light"
-            android:hint="Search"
-            android:inputType="textPersonName"
-            android:layoutAnimation="@anim/layout_anim_main"
-            android:padding="@dimen/size_10dp"
-            android:paddingStart="@dimen/size_16dp"
-            android:textColor="@color/dark_grey"
-            android:textColorHint="@color/dark_grey"
-            app:layout_constraintEnd_toEndOf="@+id/imgNotification"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/appName"
-            app:layout_constraintTop_toBottomOf="@+id/appName" />
+        <!--        <EditText-->
+        <!--            android:id="@+id/search"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="@dimen/size_50dp"-->
+        <!--            android:layout_marginTop="24dp"-->
+        <!--            android:background="@drawable/shape_home_search"-->
+        <!--            android:drawableEnd="@drawable/ic_search"-->
+        <!--            android:ems="10"-->
+        <!--            android:fontFamily="@font/poppins_light"-->
+        <!--            android:hint="Search"-->
+        <!--            android:inputType="textPersonName"-->
+        <!--            android:layoutAnimation="@anim/layout_anim_main"-->
+        <!--            android:padding="@dimen/size_10dp"-->
+        <!--            android:paddingStart="@dimen/size_16dp"-->
+        <!--            android:textColor="@color/dark_grey"-->
+        <!--            android:textColorHint="@color/dark_grey"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/imgNotification"-->
+        <!--            app:layout_constraintHorizontal_bias="0.0"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/appName"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/appName" />-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -107,18 +106,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvRecent" />
 
-
     <LinearLayout
         android:id="@+id/rvCategory"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="16dp"
-        android:padding="@dimen/size_5dp"
-        android:layoutAnimation="@anim/layout_anim_main"
         android:background="@drawable/shape_home_search"
+        android:layoutAnimation="@anim/layout_anim_main"
         android:orientation="horizontal"
+        android:padding="@dimen/size_5dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@id/swipeRefreshLayout"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvSeeAll">
@@ -130,6 +128,28 @@
             android:layout_height="match_parent" />
     </LinearLayout>
 
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.hitomi.cmlibrary.CircleMenu
+            android:id="@+id/circle_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefreshLayout"

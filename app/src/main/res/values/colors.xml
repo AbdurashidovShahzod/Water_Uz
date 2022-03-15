@@ -12,7 +12,9 @@
 
 
     <color name="gray_unselected_switch">#ADB8C9</color>
-<!--    <color name="main">#F5F7F7</color>-->
+    <!--    <color name="main">#F5F7F7</color>-->
     <color name="main">#F1F1F1</color>
     <color name="btn_color">#111111</color>
+    <color name="holo_purple">#ffaa66cc</color>
+    <color name="holo_blue_bright">#1E88E5</color>
 </resources>

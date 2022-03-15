@@ -4,11 +4,14 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.*
+import timber.log.Timber
 import uz.unzosoft.wateruz.data.local.LocalStorage
 import uz.unzosoft.wateruz.data.models.api.LoginRequest
 import uz.unzosoft.wateruz.data.models.api.LoginResponse
+import uz.unzosoft.wateruz.domain.usecase.LoginStateUseCase
 import uz.unzosoft.wateruz.domain.usecase.LoginUseCase
+import uz.unzosoft.wateruz.domain.utils.ResourceUI
 import uz.unzosoft.wateruz.presentation.ui.base.BaseVM
 import uz.unzosoft.wateruz.presentation.ui.state.Resource
 import uz.unzosoft.wateruz.presentation.ui.utils.isConnected
@@ -24,13 +27,18 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginVM @Inject constructor(
     private val cache: LocalStorage,
-    private val loginUseCase: LoginUseCase
+    private val loginUseCase: LoginUseCase,
+    private val loginStateUseCase: LoginStateUseCase
 ) : BaseVM() {
 
     private val _loginLiveData = MutableLiveData<LoginResponse>()
     val loginLiveData: LiveData<LoginResponse> = _loginLiveData
+
     private val _nextScreenLiveData = SingleLiveEvent<Unit>()
-    val nextScreenLiveData:SingleLiveEvent<Unit> = _nextScreenLiveData
+    val nextScreenLiveData: SingleLiveEvent<Unit> = _nextScreenLiveData
+
+    private val _loginState = MutableStateFlow<ResourceUI<LoginResponse>>(ResourceUI.Loading)
+    val loginState = _loginState.asStateFlow()
 
 
     @SuppressLint("NullSafeMutableLiveData")
@@ -57,6 +65,20 @@ class LoginVM @Inject constructor(
                 } else _connectLiveData.value = true
 
             }
+        }
+    }
+
+    fun signUp(email: String, password: String) {
+        _loginState.value = ResourceUI.Loading
+        launchVM {
+            if (isConnected()) {
+                loginStateUseCase.invoke(LoginRequest(email = email, password = password))
+                    .catch { _loginState.value = ResourceUI.Error(it) }
+                    .collectLatest { _loginState.value = it }
+            } else {
+                _loginState.value = ResourceUI.Connect
+            }
+
         }
     }
 }

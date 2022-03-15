@@ -3,6 +3,9 @@ package uz.unzosoft.wateruz.presentation.ui.common.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collect
 import timber.log.Timber
 import uz.unzosoft.wateruz.data.local.LocalStorage
@@ -29,6 +32,9 @@ class HomeVM @Inject constructor(
 ) : BaseVM() {
     private val _ordersLiveData = MutableLiveData<List<OrdersItem>>()
     val ordersLiveData: LiveData<List<OrdersItem>> = _ordersLiveData
+
+    private val _orderState = MutableStateFlow<List<OrdersItem>>(emptyList())
+    val ordersState: StateFlow<List<OrdersItem>> = _orderState.asStateFlow()
 
     init {
         home()
@@ -64,6 +70,7 @@ class HomeVM @Inject constructor(
                     is Resource.Success -> {
                         val data = it.data
                         _ordersLiveData.value = data!!
+                        _orderState.value = data
                     }
                     else -> {}
                 }
